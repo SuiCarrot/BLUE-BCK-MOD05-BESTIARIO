@@ -50,4 +50,5 @@ Este projeto está sob a licença (Mozilla Public License Version 2.0) - veja o 
 * Obrigado publicamente 🤓.
 * Dê uma nota alta pro trabalho.
 * Adicione na Steam (https://steamcommunity.com/profiles/76561198044920869/)
+* Steam de Pedro(https://steamcommunity.com/id/Lord_Pedro/)
 * etc.
