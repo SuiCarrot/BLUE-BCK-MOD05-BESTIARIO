@@ -24,13 +24,13 @@ export class CreateUserDto {
   @ApiProperty({
     description:
       'Senha do usuário para login. Necessário letras maiúsculas e minúsculas, número e caracter especial.',
-    example: 'bruxodorole476!',
+    example: 'Bruxodorole476!',
   })
   password: string;
 
   @ApiProperty({
     description: 'A confirmação da senha deve ser igual a senha.',
-    example: 'bruxodorole476!',
+    example: 'Bruxodorole476!',
   })
   confirmPassword: string;
 
