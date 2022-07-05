@@ -1,5 +1,4 @@
 import {
-  BadRequestException,
   HttpException,
   Injectable,
   NotFoundException,
@@ -52,7 +51,6 @@ export class ProfileService {
         id: true,
         title: true,
         imageUrl: true,
-        _count: { select: { games: true } },
       },
     });
 
