@@ -27,7 +27,7 @@ export class CreatureController {
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
   @ApiOperation({
-    summary: 'Only Admin - Adicionar um novo jogo a coleção.',
+    summary: 'Only Admin - Adicionar uma nova criatura a coleção.',
   })
   create(@LoggedUser() user: User, @Body() dto: CreateCreatureDto): Promise<Creature> {
     return this.CreatureService.create(user, dto);
@@ -35,7 +35,7 @@ export class CreatureController {
 
   @Get()
   @ApiOperation({
-    summary: 'Listar todos os jogos da coleção.',
+    summary: 'Listar todas as criaturas do site.',
   })
   findAll(): Promise<Creature[]> {
     return this.CreatureService.findAll();
@@ -43,7 +43,7 @@ export class CreatureController {
 
   @Get(':id')
   @ApiOperation({
-    summary: 'Visualizar um jogo através do ID.',
+    summary: 'Visualizar uma criatura através do ID.',
   })
   findOne(@Param('id') id: string): Promise<Creature> {
     return this.CreatureService.findOne(id);
@@ -53,7 +53,7 @@ export class CreatureController {
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
   @ApiOperation({
-    summary: 'Only Admin - Editar dados de um jogo através do  ID.',
+    summary: 'Only Admin - Editar dados de uma criatura através do  ID.',
   })
   update(
     @LoggedUser() user: User,
@@ -67,7 +67,7 @@ export class CreatureController {
   @UseGuards(AuthGuard())
   @ApiBearerAuth()
   @ApiOperation({
-    summary: 'Only Admin - Deletar um jogo através do ID.',
+    summary: 'Only Admin - Deletar uma criatura através do ID.',
   })
   delete(@LoggedUser() user: User, @Param('id') id: string) {
     return this.CreatureService.delete(id, user);
