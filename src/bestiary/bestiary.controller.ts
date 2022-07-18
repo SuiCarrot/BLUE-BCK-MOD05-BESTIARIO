@@ -3,7 +3,6 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
   UseGuards,
@@ -40,7 +39,7 @@ export class BestiaryController {
   @ApiOperation({
     summary: 'Remover criatura de um determinado Perfil. Usar Id do addCreature.',
   })
-  delete(@Param('BestiaryId') id: string) {
+  delete(@Param('bestiaryId') id: string) {
     return this.bestiaryService.delete(id);
   }
 }

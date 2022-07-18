@@ -70,7 +70,7 @@ model Reference {
 
 model Bestiary {
   id            String        @id @default(uuid())
-  creature      Creature    @relation(fields: [creatureId], references: [id])
+  creature      Creature      @relation(fields: [creatureId], references: [id])
   creatureId    String        @map("game_id")
   profile       Profile       @relation(fields: [profileId], references: [id])
   profileId     String        @map("profile_id")

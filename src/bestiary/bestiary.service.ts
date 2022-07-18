@@ -19,6 +19,7 @@ export class BestiaryService {
       .create({
         data,
         select: {
+          id:true,
           creature: {
             select: {
               id: true,

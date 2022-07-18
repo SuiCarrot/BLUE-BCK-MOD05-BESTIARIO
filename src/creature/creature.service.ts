@@ -34,7 +34,7 @@ export class CreatureService {
 
     if (list.length === 0) {
       throw new NotFoundException(
-        'Não existem jogos cadastrados. Quer cadastrar o seu jogo favorito?',
+        'Não existem criaturas cadastrados. Quer cadastrar o seu criatura favorito?',
       );
     }
     return list;
@@ -68,6 +68,6 @@ export class CreatureService {
     await this.prisma.creature.delete({
       where: { id },
     });
-    throw new HttpException('Jogo deletado com sucesso', 204);
+    throw new HttpException('Criatura deletado com sucesso', 204);
   }
 }
