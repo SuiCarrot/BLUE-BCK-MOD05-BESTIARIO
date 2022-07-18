@@ -3,6 +3,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getAppStatus(): string {
-    return `Server is running! 🚀\n Please check /api for Swagger docs...`;
+    return `Servidor Rodando! 🚀\n\n **PARA O SWAGGER** -> ir para a rota /api`;
   }
 }

@@ -1,0 +1,6 @@
+import { Creature } from '../../creature/entities/creature-entity'
+import { Profile } from '../../profile/entities/profile.entity';
+export class Bestiary {
+  creatureId: Creature;
+  profileId: Profile;
+}
