@@ -6,7 +6,7 @@ import {
   Patch,
   Param,
   Delete,
-  UseGuards
+  UseGuards,
 } from '@nestjs/common';
 import { CreatureService } from './creature.service';
 import { CreateCreatureDto } from './dto/create-creature.dto';
@@ -16,7 +16,6 @@ import { Creature } from './entities/creature-entity';
 import { AuthGuard } from '@nestjs/passport';
 import { LoggedUser } from 'src/auth/logged-user.decorator';
 import { User } from '@prisma/client';
-
 
 @ApiTags('Creature')
 @Controller('creature')
@@ -29,7 +28,10 @@ export class CreatureController {
   @ApiOperation({
     summary: 'Only Admin - Adicionar uma nova criatura a coleção.',
   })
-  create(@LoggedUser() user: User, @Body() dto: CreateCreatureDto): Promise<Creature> {
+  create(
+    @LoggedUser() user: User,
+    @Body() dto: CreateCreatureDto,
+  ): Promise<Creature> {
     return this.CreatureService.create(user, dto);
   }
 

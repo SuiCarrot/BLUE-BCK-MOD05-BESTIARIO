@@ -45,8 +45,6 @@ export class UserService {
       .catch(handleError);
   }
 
-
-
   /////////////////////////////////////////////////// ADMIN
 
   async findAll(user: User) {
@@ -63,7 +61,7 @@ export class UserService {
     return list;
   }
 
-  async findOne(id: string, user:User) {
+  async findOne(id: string, user: User) {
     isAdmin(user);
 
     const record = await this.prisma.user.findUnique({
@@ -75,9 +73,8 @@ export class UserService {
     return record;
   }
 
-
-  async deleteUser(id: string, user:User) {
-    isAdmin(user)
+  async deleteUser(id: string, user: User) {
+    isAdmin(user);
     await this.findOne(id, user);
 
     await this.prisma.user.delete({
@@ -96,9 +93,7 @@ export class UserService {
     return record;
   }
 
-
-
-  async update(userId: string, dto: UpdateUserDto){
+  async update(userId: string, dto: UpdateUserDto) {
     await this.myAccount(userId);
 
     if (dto.password) {
@@ -132,5 +127,4 @@ export class UserService {
     });
     throw new HttpException('Usuário deletado com sucesso.', 204);
   }
-
 }

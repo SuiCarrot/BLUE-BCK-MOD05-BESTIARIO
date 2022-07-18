@@ -17,7 +17,8 @@ export class CreateReferenceDto {
 
   @IsString()
   @ApiProperty({
-    description: 'Mídia onde essa referência mais aparece. Adicionar mais de uma separando com um traço (-)',
+    description:
+      'Mídia onde essa referência mais aparece. Adicionar mais de uma separando com um traço (-)',
     example: 'RPG - Filmes - Games',
   })
   media: string;

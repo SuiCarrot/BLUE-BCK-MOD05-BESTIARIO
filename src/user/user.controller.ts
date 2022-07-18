@@ -49,7 +49,6 @@ export class UserController {
     return this.userService.findOne(id, user);
   }
 
-
   @Delete('user/:id')
   @UseGuards(AuthGuard())
   @ApiBearerAuth()

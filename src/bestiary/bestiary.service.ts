@@ -12,14 +12,14 @@ export class BestiaryService {
   async addcreature(dto: CreateBestiaryDto) {
     const data: Prisma.BestiaryCreateInput = {
       creature: { connect: { id: dto.creatureId } },
-      profile: { connect: { id: dto.profileId } }
+      profile: { connect: { id: dto.profileId } },
     };
 
     return await this.prisma.bestiary
       .create({
         data,
         select: {
-          id:true,
+          id: true,
           creature: {
             select: {
               id: true,

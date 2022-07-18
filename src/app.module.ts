@@ -10,7 +10,15 @@ import { BestiaryModule } from './bestiary/bestiary.module';
 import { ReferenceModule } from './reference/reference.module';
 
 @Module({
-  imports: [AuthModule, UserModule, PrismaModule, ProfileModule, CreatureModule, ReferenceModule, BestiaryModule],
+  imports: [
+    AuthModule,
+    UserModule,
+    PrismaModule,
+    ProfileModule,
+    CreatureModule,
+    ReferenceModule,
+    BestiaryModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

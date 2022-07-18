@@ -37,7 +37,8 @@ export class BestiaryController {
 
   @Delete('profile/creature/:bestiaryId')
   @ApiOperation({
-    summary: 'Remover criatura de um determinado Perfil. Usar Id do addCreature.',
+    summary:
+      'Remover criatura de um determinado Perfil. Usar Id do addCreature.',
   })
   delete(@Param('bestiaryId') id: string) {
     return this.bestiaryService.delete(id);

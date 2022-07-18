@@ -19,8 +19,12 @@ export class ReferenceService {
   constructor(private readonly prisma: PrismaService) {}
 
   async create(dto: CreateReferenceDto, user: User): Promise<Reference> {
-    isAdmin(user)
-    const data: Prisma.ReferenceCreateInput = { name: dto.name, genre:dto.genre, media:dto.media };
+    isAdmin(user);
+    const data: Prisma.ReferenceCreateInput = {
+      name: dto.name,
+      genre: dto.genre,
+      media: dto.media,
+    };
 
     data.name = await dataTreatment(data.name);
 
@@ -46,8 +50,12 @@ export class ReferenceService {
     return record;
   }
 
-  async update(id: string, dto: UpdateReferenceDto, user: User): Promise<Reference> {
-    isAdmin(user)
+  async update(
+    id: string,
+    dto: UpdateReferenceDto,
+    user: User,
+  ): Promise<Reference> {
+    isAdmin(user);
     await this.findOne(id);
 
     const data: Partial<Reference> = { ...dto };
@@ -63,7 +71,7 @@ export class ReferenceService {
   }
 
   async delete(id: string, user: User) {
-    isAdmin(user)
+    isAdmin(user);
     await this.findOne(id);
 
     await this.prisma.reference.delete({

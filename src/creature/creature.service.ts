@@ -12,7 +12,7 @@ import { isAdmin } from 'src/utils/admin';
 export class CreatureService {
   constructor(private readonly prisma: PrismaService) {}
   async create(user: User, dto: CreateCreatureDto) {
-   isAdmin(user)
+    isAdmin(user);
 
     const data: Prisma.CreatureCreateInput = {
       name: dto.name,
@@ -20,8 +20,12 @@ export class CreatureService {
       description: dto.description,
       reference: {
         connectOrCreate: {
-          create: { name: dto.reference, genre: dto.reference, media:dto.reference},
-          where: { name: dto.reference},
+          create: {
+            name: dto.reference,
+            genre: dto.reference,
+            media: dto.reference,
+          },
+          where: { name: dto.reference },
         },
       },
     };
@@ -47,8 +51,12 @@ export class CreatureService {
     return record;
   }
 
-  async update(id: string, dto: UpdateCreatureDto, user: User): Promise<Creature> {
-    isAdmin(user)
+  async update(
+    id: string,
+    dto: UpdateCreatureDto,
+    user: User,
+  ): Promise<Creature> {
+    isAdmin(user);
     await this.findOne(id);
 
     const data = { ...dto };
@@ -61,8 +69,8 @@ export class CreatureService {
       .catch(handleError);
   }
 
-  async delete(id: string, user:User) {
-    isAdmin(user)
+  async delete(id: string, user: User) {
+    isAdmin(user);
     await this.findOne(id);
 
     await this.prisma.creature.delete({

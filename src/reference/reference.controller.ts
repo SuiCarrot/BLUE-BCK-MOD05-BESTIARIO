@@ -29,8 +29,9 @@ export class ReferenceController {
     summary: 'Only Amin - Criar nova refêrencia.',
   })
   create(
-    @LoggedUser() user:User,
-    @Body() dto: CreateReferenceDto): Promise<Reference> {
+    @LoggedUser() user: User,
+    @Body() dto: CreateReferenceDto,
+  ): Promise<Reference> {
     return this.referenceService.create(dto, user);
   }
 
