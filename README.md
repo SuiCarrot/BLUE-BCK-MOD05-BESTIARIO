@@ -13,7 +13,7 @@ git clone https://github.com/SuiCarrot/BLUE-BCK-MOD05-BESTIARIO.git
 Clone o repositório na sua maquina e instale as dependencias utilizando:
 
 ```
-npm i
+npm install
 ```
 
 Crie um arquivo **.env** seguindo o exemplo do arquivo **.env.example** completando os dados com o seu banco de dados.
