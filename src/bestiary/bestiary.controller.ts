@@ -25,7 +25,7 @@ export class BestiaryController {
     summary: 'Adicionar criatura a um determinado Perfil (addCreature).',
   })
   create(@Body() dto: CreateBestiaryDto) {
-    return this.bestiaryService.addGame(dto);
+    return this.bestiaryService.addcreature(dto);
   }
 
   @Get('homepage/:profileId')
