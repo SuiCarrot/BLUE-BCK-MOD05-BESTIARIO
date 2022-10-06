@@ -71,12 +71,12 @@ model Reference {
 model Bestiary {
   id         String   @id @default(uuid())
   creature   Creature @relation(fields: [creatureId], references: [id])
-  creatureId String   @map("game_id")
+  creatureId String   @map("creature_id")
   profile    Profile  @relation(fields: [profileId], references: [id])
   profileId  String   @map("profile_id")
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  @@map("game_profile")
+  @@map("creature_profile")
 }

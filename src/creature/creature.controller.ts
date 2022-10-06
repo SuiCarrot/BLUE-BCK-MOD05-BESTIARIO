@@ -30,8 +30,7 @@ export class CreatureController {
   })
   create(
     @LoggedUser() user: User,
-    @Body() dto: CreateCreatureDto,
-  ): Promise<Creature> {
+    @Body() dto: CreateCreatureDto,): Promise<Creature> {
     return this.CreatureService.create(user, dto);
   }
 
